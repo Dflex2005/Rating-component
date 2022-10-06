@@ -1,0 +1,233 @@
+@import "./responsive";
+
+
+// variables
+$useColor: rgb(31, 31, 48);
+$white: #fff;
+$color:rgb(87, 87, 119);
+$orange:rgb(255, 102, 0);
+
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(14, 14, 22);
+    flex-direction: column;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    // firstcard styling
+    .first-card{
+        height: 400px;
+        width: 350px;
+        background: rgb(23, 23, 43);
+        padding: 20px 30px;
+        border-radius: 20px;
+        position: relative;
+       
+        @include min-rp {
+            width: 95%;
+        }
+
+
+        // img styling
+        .img{
+            background:$useColor ;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin:0 0 25px 0;
+        }
+
+        // h1 styling
+        h1{
+            color: $white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        //text styling
+        .text{
+            color:$color;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 14px;
+            margin-top: 15px;
+            line-height: 1.5em;
+        }
+
+        // btn rating styling
+       
+        .rating-btns{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 30px;
+            @include min-rp{
+                margin: 20px -30px 0 -30px;
+             }
+
+
+            .btn{
+
+                
+                
+                .select{
+                    color: $color;
+                    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                    width: 50px;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    background: $useColor;
+                    font-size: 17px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    border: none;
+                    transition: .4s ease;
+
+                    @include min-rp{
+                        width: 40px;
+                        height: 40px;
+                    }
+
+                    &:hover{
+                        color: #fff;
+                        background: $color;
+                    }
+                }
+            }
+
+            .selectstyle{
+                .select{
+                    background: $orange;
+                    color: white;
+                    transition: .1s ease;
+
+                    &:hover{
+                        background: $orange;
+                        color: white;
+                    }
+                }
+
+                
+            }
+            
+        }
+
+        // submit btn
+        .sub{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-top: 40px;
+            padding: 10px 0;
+            background: $orange;
+            border: none;
+            border-radius: 20px;
+            font-size: 15px;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: .5s ease;
+            &:hover{
+                background: $white;
+                color: $orange;
+            }
+        }
+    }
+
+
+    //second-card styling
+    .second-card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 400px;
+        width: 350px;
+        background: rgb(23, 23, 43);
+        padding: 20px 30px;
+        border-radius: 20px;
+        position: relative;
+        display: none;
+
+        @include min-rp{
+            width: 95%;
+        }
+
+        // img card styling
+        .img-card{
+            margin-top: 20px;
+        }
+
+        //total rating
+        .total-rating{
+            background: rgb(39, 39, 70);
+            margin-top: 25px;
+            color: rgb(236, 125, 52);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            padding: 7px 12px;
+            border-radius: 15px;
+        }
+
+        // h2 styling
+        h2{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: white;
+            font-size: 27px;
+            margin-top: 30px;
+        }
+
+        //text styling
+        .s-text{
+            color: $color;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+
+    }
+}
+
+
+// add class styling
+.show-card .first-card{
+    display: none;
+}
+
+.show-card .second-card{
+    display: flex;
+    opacity: 0;
+    animation: smooth 1.2s ease forwards;
+}
+
+@keyframes smooth {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
